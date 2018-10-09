@@ -6,10 +6,19 @@ import { AuthenticationComponent } from './authentication/component/authenticati
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './routing';
+import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatVideoModule } from 'mat-video';
+
+
+
 @NgModule({
+  
   declarations: [
     AppComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HomeComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -17,7 +26,10 @@ import { routing } from './routing';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    MatVideoModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

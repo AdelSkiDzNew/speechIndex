@@ -9,6 +9,8 @@ import { routing } from './routing';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
+import { MatPaginatorModule } from '@angular/material';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -28,7 +30,9 @@ import { MatVideoModule } from 'mat-video';
     ReactiveFormsModule,
     routing,
     BrowserAnimationsModule,
-    MatVideoModule
+    MatPaginatorModule,
+    MatVideoModule,
+    NgxPaginationModule
   
   ],
   providers: [],

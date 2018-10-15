@@ -9,8 +9,11 @@ import { routing } from './routing';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatVideoModule } from 'mat-video';
-import { MatPaginatorModule } from '@angular/material';
+import { MatPaginatorModule, MatProgressBarModule } from '@angular/material';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ApiAudio } from './commun/api.audio';
+import { HomeService } from './home/home.service';
+import { WindowRef } from './commun/window';
 
 
 
@@ -32,10 +35,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatVideoModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatProgressBarModule
   
   ],
-  providers: [],
+  providers: [ApiAudio,HomeService,WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

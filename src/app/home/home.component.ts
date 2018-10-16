@@ -21,6 +21,7 @@ export class HomeComponent {
   @ViewChildren('videoPlayer') videoPlayer: ElementRef;
   timeValue :any;
   numberPage: number; //Declare the variable that you're using in currentPage
+  LOGO_PATH : string = '../../assets/images/logo-medi-audio.png';
 
 
   
@@ -82,7 +83,7 @@ export class HomeComponent {
                   {
                     if(elementY.name.toLocaleLowerCase() == tab[index].toLocaleLowerCase())
                     {
-                        this.dataTemp.push({keyWords:tabKeyAndColor[index].value,time : elementY.time,jobId : elementX.transcription.job.id,color:tabKeyAndColor[index].color});
+                        this.dataTemp.push({keyWords:tabKeyAndColor[index].value,time : elementY.time,timeConverted:this.calculateTimeVideo(elementY.time),jobId : elementX.transcription.job.id,color:tabKeyAndColor[index].color});
                         if(key === '')
                         {
                           key  = key + '' + elementY.time;
@@ -146,5 +147,18 @@ export class HomeComponent {
     let tabColor = ['#6200EE','#C51162','#ffcd4f','#03DAC6','black'];
     return tabColor[index];
   }
+
+  calculateTimeVideo(time) :string{
+    let hr = ~~(time / 3600);
+    let min = ~~((time % 3600) / 60);
+    let sec = time % 60;
+    let secMin = "";
+    if (hr > 0) {
+      secMin += "" + hr + ":" + (min < 10 ? "0" : "");
+    }
+    secMin += "" + min + ":" + (sec < 10 ? "0" : "");
+    secMin += "" + sec.toFixed(2);
+    return secMin+ " min";
+ }
 
 }

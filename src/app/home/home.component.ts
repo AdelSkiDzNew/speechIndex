@@ -21,7 +21,7 @@ export class HomeComponent {
   @ViewChildren('videoPlayer') videoPlayer: ElementRef;
   timeValue :any;
   numberPage: number; //Declare the variable that you're using in currentPage
-  LOGO_PATH : string = '../../assets/images/logo-medi-audio.png';
+  LOGO_PATH : string = '../../assets/images/video-player-outline.png';
 
 
   
@@ -144,7 +144,7 @@ export class HomeComponent {
 
   changeColor(index)
   {
-    let tabColor = ['#6200EE','#C51162','#ffcd4f','#03DAC6','black'];
+    let tabColor = ['#6200EE','green','#C51162','black','#03DAC6'];
     return tabColor[index];
   }
 
